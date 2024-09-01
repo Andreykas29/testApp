@@ -1,13 +1,616 @@
+@import './static/css/reset.css';
+
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("./static/fonts/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("./static/fonts/Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: "SourceSansPro-Regular";
+  src: url("./static/fonts/SourceSansPro-Regular.otf");
+}
+@font-face {
+  font-family: "SourceSansPro-SemiBold";
+  src: url("./static/fonts/SourceSansPro-Semibold.otf");
+}
+@font-face {
+  font-family: "SourceSansPro-Bold";
+  src: url("./static/fonts/SourceSansPro-Bold.otf");
+}
+@font-face {
+  font-family: "Poppins-Light";
+  src: url("./static/fonts/Poppins-Light.ttf");
+}
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("./static/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: "Poppins-Medium";
+  src: url("./static/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: "Poppins-Bold";
+  src: url("./static/fonts/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "Poppins-SemiBold";
+  src: url("./static/fonts/Poppins-SemiBold.ttf");
+}
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 8px;
+}
+
+.header__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.logo img {
+  padding-right: 10px;
+}
+
+.logo-name {
+  font-family: "Roboto-Bold";
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 7px;
+  background: linear-gradient(to right, #FF3E80, #5B68DC);
+  -webkit-background-clip: text;
+          background-clip: text;
+  color: transparent;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+.menu ul {
+  display: flex;
+  gap: 54.4px;
+}
+.menu a {
+  font-family: "SourceSansPro-SemiBold";
+  font-size: 14px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+}
+.login p {
+  text-decoration: underline;
+  font-family: "SourceSansPro-Semibold";
+  font-size: 14px;
+  cursor: pointer;
+}
+.login p:first-child {
+  margin-right: 17px;
+  position: relative;
+}
+.login p:first-child:after {
+  content: "";
+  height: 51px;
+  border: 1px solid rgb(0, 0, 0);
+  position: absolute;
+  top: -50%;
+  right: -9px;
+}
+
+.banner__description {
+  max-width: 50%;
+}
+
+.banner__wrapper {
+  display: flex;
+  justify-content: space-between;
+  border: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  padding: 32px;
+  box-sizing: content-box;
+}
+
+.banner_name {
+  font-family: "Poppins-Medium";
+  font-size: 16px;
+  color: #616161;
+  margin-bottom: 25px;
+}
+
+.banner__title {
+  font-family: "Poppins-Bold";
+  font-size: 50px;
+  color: #1D1D1D;
+  line-height: 60px;
+  margin-bottom: 22px;
+}
+
+.banner__promotion {
+  font-family: "SourceSansPro-Regular";
+  font-size: 22px;
+  line-height: 30.8px;
+  margin-bottom: 20px;
+}
+
+.banner__details {
+  font-family: "Poppins-Regular";
+  font-size: 16px;
+  color: #6F7070;
+  position: relative;
+}
+.banner__details a {
+  font-family: "Poppins-Regular";
+  font-size: 16px;
+  color: #6F7070;
+}
+
+.banner {
+  margin-top: 32px;
+}
+
+.banner:after {
+  content: url("../public/images/background1.png");
+  position: absolute;
+  top: 0;
+  left: 1.5%;
+  z-index: -1;
+}
+
+.latest-posts {
+  margin-top: 120px;
+}
+
+.section-title {
+  font-family: "Poppins-Bold";
+  font-size: 50px;
+  color: #1D1D1D;
+}
+
+.latest-post__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 34px;
+}
+
+.post {
+  width: 74.21875%;
+  display: flex;
+}
+.post h3 {
+  font-family: "Poppins-Bold";
+  font-size: 32px;
+  line-height: 38.4px;
+  margin-bottom: 24px;
+}
+.post p {
+  font-family: "SourceSansPro-Regular";
+  font-size: 20px;
+  line-height: 30.8px;
+}
+
+.post-1 .post__description, .post-3 .post__description {
+  width: 48.2254697286%;
+  margin-right: 48px;
+}
+
+.post-2 .post__description {
+  width: 46.764091858%;
+  margin-left: 55px;
+}
+
+.post-1, .post-2 {
+  margin-bottom: 48px;
+}
+
+.values {
+  margin-top: 110px;
+  position: relative;
+}
+
+.values .section-title {
+  margin-bottom: 16px;
+}
+
+.values__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 39px 16px;
+}
+
+.values__item {
+  width: 32.5%;
+  position: relative;
+  border-radius: 24px;
+  padding: 24px;
+  background: #fff;
+}
+.values__item h3 {
+  font-family: "Poppins-Bold";
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+.values__item p {
+  font-family: "SourceSansPro-SemiBold";
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.values__item img {
+  width: 113.0434782609%;
+}
+.values__item button {
+  width: 135px;
+  height: 56px;
+  border-radius: 16px;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins-SemiBold";
+  font-size: 16px;
+}
+
+.values__item::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(to right, #F367A3, #F0CBEB, #AF8AF3);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+  border-radius: 24px;
+  z-index: -1;
+}
+
+.values:after {
+  content: "";
+  background: url("../public/images/background2.png") no-repeat center;
+  z-index: -1;
+  background-size: cover;
+  position: absolute;
+  bottom: -10%;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+}
+
+.slider {
+  overflow: hidden;
+  padding-bottom: 104px;
+}
+
+.slider__wrapper {
+  margin-top: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider__inner {
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.slider__inner__content {
+  min-width: 814px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 24px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+
+}
+
+
+.slider__inner__content h3 {
+  color: #303030;
+  font-family: "Roboto-Bold";
+  font-size: 22px;
+}
+.slider__inner__content a {
+  font-family: "Roboto-Regular";
+  font-size: 16px;
+  color: #046508;
+  text-decoration: underline;
+}
+.slider__inner__content img {
+  margin-bottom: 24px;
+  width: 782px;
+  height: 313px;
+}
+
+.slider__line {
+  width: 100%;
+  border: 1px solid #EFEFEF;
+  margin: 8px 0 24px 0;
+}
+
+.slider__inner__content:nth-child(2) {
+  position: absolute;
+  width: 814px;
+  right: -607px;
+}
+.slider__inner__content:not(:first-child) {
+  position: absolute;
+  right: -607px;
+  opacity: 0;
+}
+
+.slider__inner__content.active {
+  opacity: 1;
+}
+
+.slider__inner__content:not(.active) {
+  opacity: 0;
+}
+
+.slider__inner__content:nth-child(2) {
+  opacity: 1;
+}
+
+
+
+
+.slider {
+  position: relative;
+}
+
+.slider__inner:after {
+  content: "";
+  background: url("../public/images/background33.png") no-repeat center;
+  z-index: -1;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: rotate(10deg);
+}
+
+.slider__control {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  width: 100%; 
+  position: absolute;
+  bottom: 32px; 
+  padding: 0 80px;
+
+}
+
+.center_btn {
+  display: flex;
+  gap:16px;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background-color: #F6E6FD;
+  border-radius: 50%; 
+  
+}
+
+.dot-active {
+  background-color: #000;
+}
+
+.left_btn, .right_btn {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border: none;
+}
+
+.center_btn span {
+  color: #000;
+  height: 16;
+  width: 16;
+  border-radius: 50%;
+}
+
+footer {
+  background: #000;
+  padding-top: 30px;
+  padding-bottom: 13px;
+  width: 100%;
+}
+
+footer .menu {
+  justify-content: center;
+  margin-top: 15px;
+}
+footer .menu a {
+  color: #fff;
+}
+footer .menu ul {
+  gap: 40px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+  margin-left: 35px;
+}
+
+
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-inner {
+  position: absolute;
+  height: 777px;
+  width: 671px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+}
+.modal-login .modal-inner {
+  height: 544px;
+}
+.modal-detail .modal-inner {
+  height: 489px;
+  width: 560px;
+}
+
+.modal-detail .modal-content img {
+  width: 100%;
+  max-width: 512px;
+  max-height:200px ;
+}
+.modal-detail .modal-content p {
+  font-family: "SourceSansPro-SemiBold";
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 24px;
+}
+.modal-detail .modal-inner .modal-content h3 {
+  text-align: left;
+  margin-bottom: 24px;
+  margin-top: 24px;
+  font-size: 32px;
+}
+
+.modal-close {
+  display: flex;
+  justify-content: end;
+  padding: 24px 24px 0 0;
+}
+
+.modal-content {
+  padding: 0 24px 0 24px;
+}
+.modal-content h3 {
+  text-align: center;
+  font-family: "Poppins-Bold";
+  font-size: 48px;
+  margin-top: 35px;
+  margin-bottom: 40px;
+}
+.modal-content input {
+  border: none;
+  border-bottom: 1px solid #1D1D1D;
+}
+.modal-content .label {
+  font-family: "Poppins-Medium";
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+
+}
+input {
+  outline: none;
+}
+
+.modal-form input::-moz-placeholder {
+  font-family: "Poppins-Light";
+  font-size: 14px;
+  color: #1D1D1D;
+}
+.modal-form input::placeholder {
+  font-family: "Poppins-Light";
+  font-size: 14px;
+  color: #1D1D1D;
+}
+
+.modal-form:not(first-child), .modal-form:not(:last-child) {
+  margin-top: 48px;
+}
+
+.policy {
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+}
+.policy input {
+  margin-right: 14px;
+}
+
+.modal-button button {
+  height: 46px;
+  width: 120px;
+  border-radius: 24px;
+  background: #000;
+  font-family: "SourceSansPro-Bold";
+  font-size: 15px;
+  color: #fff;
+  margin-top: 34px;
+}
+
+
+.have-account {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 24px;
+}
+.have-account p, .have-account a {
+  font-family: "Poppins-SemiBold";
+  font-size: 14px;
+  color: #303030;
+}
+.have-account a {
+  color: #008FE0;
+  text-decoration: underline;
+}
+
+.profile {
+  display: flex;
+  text-align: center;
+  font-family: "SourceSansPro-Bold";
+  font-size: 14px;
+  align-items:center;
+}
+
+.profile img {
+  width: 32px;
+  height: 32px;
+  margin-right: 7.5px;
 }
