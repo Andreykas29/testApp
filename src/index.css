@@ -507,6 +507,7 @@ footer .menu ul {
   line-height: 21px;
   margin-top: 24px;
 }
+
 .modal-detail .modal-inner .modal-content h3 {
   text-align: left;
   margin-bottom: 24px;
@@ -545,6 +546,8 @@ footer .menu ul {
   flex-direction: column;
 
 }
+
+
 input {
   outline: none;
 }
@@ -613,4 +616,40 @@ input {
   width: 32px;
   height: 32px;
   margin-right: 7.5px;
+}
+
+@media (max-height: 700px) {
+  
+  .modal-inner {
+    height: 95%;
+  }
+  .modal-content h3 {
+    margin-top: 15px;
+    
+  }
+
+  modal-form:not(first-child), .modal-form:not(:last-child) {
+    margin-top: 40px;
+}
+  .have-account {
+    margin-top: 50px;
+  }
+}
+
+@media (max-height: 650px) {
+  
+  .modal-inner {
+    height: 90%;
+  }
+  .modal-content h3 {
+    margin-top: 15px;
+    
+  }
+
+  modal-form:not(first-child), .modal-form:not(:last-child) {
+    margin-top: 20px;
+}
+  .have-account {
+    margin-top: 30px;
+  }
 }
